@@ -1,0 +1,251 @@
+/* -----Font----- */
+h1, h2, h3, h4, h5,
+nav ul li a,
+#logo-container span,
+#color-switch .btn {
+  font-family: 'Capriola', "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Meiryo, sans-serif;
+}
+p {
+  line-height: 2rem;
+}
+.button-collapse {
+  color: #26a69a;
+}
+@media (max-width: 414px) {
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+  
+/* -----navbar----- */
+nav ul a,
+nav {
+  color: #000000;
+}
+
+header {
+    display: block;
+    unicode-bidi: isolate;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;  /* 必要に応じて調整 */
+}
+  
+nav {
+  box-shadow: none;
+  background-color: rgba(216, 216, 216, 0.73);
+}
+
+nav ul li a {
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+  -webkit-backface-visibility:hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+  background-color: #003846;
+}
+
+  .side-nav .collapsible-header,
+.side-nav.fixed .collapsible-header {
+  padding: 0 32px;
+}
+
+.side-nav .collapsible-body li a,
+.side-nav.fixed .collapsible-body li a {
+  padding-left: 48px;
+}
+
+i.right {
+  margin: 0;
+}
+
+/* メニュー全体のスタイル */
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* 横並びにする */
+}
+
+.menu li {
+    position: relative; /* 疑似要素の位置調整のため */
+}
+
+/* 通常のメニュー項目に赤いラインを引く */
+.menu > li > a::after {
+    content: ''; /* 疑似要素の内容 */
+    position: absolute; /* 親要素基準で位置調整 */
+    bottom: 0; /* 下側に配置 */
+    left: 50%; /* 中央スタート */
+    right: 50%; /* 中央スタート */
+    height: 2px; /* ラインの高さ */
+    background-color: red; /* ラインの色 */
+    transition: left 0.3s ease-in-out, right 0.3s ease-in-out; /* アニメーション */
+}
+
+/* ホバー時に中央から広がる */
+.menu > li:hover > a::after {
+    left: 0; /* 左端まで広がる */
+    right: 0; /* 右端まで広がる */
+}
+
+/* ホバーを外すと中央に戻る */
+.menu > li > a::after {
+    transition: left 0.3s ease-in-out, right 0.3s ease-in-out; /* 戻りもスムーズに */
+}
+/* dropdown内のリンクはラインを表示しない */
+.menu .dropdown-list a::after {
+    content: none; /* ラインを非表示にする */
+}
+
+header ul li .collapsible .collapsible-header {
+    padding: 0 32px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-list {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    top: 90%;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+    -webkit-backface-visibility:hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+.dropdown-list li {
+    width: 100%;
+}
+.dropdown:hover .dropdown-list {
+    visibility: visible;
+    opacity: 1;
+    top: 100%;
+}
+  
+
+  /* fallback */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v142/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+  
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sidenav-trigger{
+    color: #000;
+  }
+  /* サイドナビのアニメーション */
+  .side-nav {
+    position: fixed;
+    width: 300px;
+    left: 0;
+    top: 0;
+    margin: 0;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    height: 100%;
+    height: calc(100% + 60px);
+    height: -moz-calc(100%);
+    padding-bottom: 60px;
+    background-color: #fff;
+    z-index: 999;
+    overflow-y: auto;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%)
+}
+/* アコーディオンメニューのスタイル */
+.side-nav.open {
+    transform: translateX(0); /* サイドナビが開く */
+}
+.side-nav a:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+  
+/* サイドナビのリンクスタイル */
+.side-nav li>a {
+    color: rgba(0, 0, 0, 0.87);
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 32px;
+}
+
+i.right {
+    float: right;
+    margin-left: 15px;
+}
+
+.collapsible-body {
+    padding-top: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.collapsible-header.active{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+/* モバイルサイズでサイドナビゲーションメニューを表示 */
+@media only screen and (max-width: 992px) {
+    .right.menu {
+        display: none; /* デスクトップ用メニューを非表示 */
+    }
+
+    .sidenav-trigger {
+        display: block; /* サイドナビゲーションのトリガーアイコンを表示 */
+    }
+
+    /* サイドナビゲーションを表示 */
+    .side-nav {
+        display: block; /* モバイルメニューを表示 */
+    }
+}
+
+/* デスクトップサイズ以上で通常メニューを表示 */
+@media only screen and (min-width: 993px) {
+    .right.menu {
+        display: block; /* デスクトップ用メニューを表示 */
+    }
+
+    .sidenav-trigger {
+        display: none; /* サイドナビゲーションのトリガーアイコンを非表示 */
+    }
+
+    .side-nav {
+        display: none; /* モバイルメニューを非表示 */
+    }
+}
